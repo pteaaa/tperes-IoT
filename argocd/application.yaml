@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/pteaaa/tperes-IoT
-    targetRevision: main
+    targetRevision: HEAD
     path: app # Répertoire contenant les fichiers YAML
   destination:
     server: https://kubernetes.default.svc
