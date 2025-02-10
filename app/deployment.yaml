@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wil42
+  namespace: dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wil42
+  template:
+    metadata:
+      labels:
+        app: wil42
+    spec:
+      containers:
+        - name: wil42
+          image: wil42/playground:v1
+          ports:
+            - containerPort: 8888
+          env:
+            - name: ENV_VAR
+              value: "production"

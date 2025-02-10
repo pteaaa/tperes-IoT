@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wil42
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pteaaa/tperes-IoT
+    targetRevision: main
+    path: app # Répertoire contenant les fichiers YAML
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
